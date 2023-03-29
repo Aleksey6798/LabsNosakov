@@ -12,14 +12,24 @@
             border: 1px solid;
             border-radius: 7px;
             padding: 7px;
-            width: 500px;
-            height: 250px;
+            width: 400px;
+            height: 100px;
             overflow-y: auto;
             overflow-x: hidden;
             position: relative;
+            background: linear-gradient(green,blue);
+            z-index: 2;
         }
-    
-    </style>
+        .second {
+            z-index: 1;
+            left: 380px;
+            top: 120px;
+            position: fixed;
+        }
+        .second:hover {
+            z-index: 4;
+        }
+   </style>
 </head>
 <body>
     <header>
@@ -35,7 +45,7 @@
             Как Гитлер выплачивал пенсии? Кто сделал чемодан на колёсиках? Казалось бы, ерунда. Но, скажу вам по секрету, всё это важно.
         </div>
         
-        <div>
+        <div class="second">
             Во второй главе я подробно рассказываю о том, откуда взялись акции и корпорации, чтобы вы поняли базовую идею организации современной большой компании – типа Apple или Google. 
             Как было у римлян, у генуэзских купцов и у английской королевы, кто кормил гусей, кто устраивал туры в Тай и кто кого облапошил.
         </div>
