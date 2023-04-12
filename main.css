@@ -13,6 +13,9 @@ header {
     font-size: 16pt;
     transition: 600ms 1s;
 }
+main {
+    margin: 10px 20px;
+}
 
 footer {
     background-image: linear-gradient(to left bottom,black,red,green,yellow);
