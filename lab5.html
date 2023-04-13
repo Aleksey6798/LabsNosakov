@@ -47,6 +47,13 @@
             let result = a / b;
             alert(' Деление ' + a + ' и ' + b + ' равна ' + result);
         }
+        function changeOutput(buttonNum, backColor,textColor,bordersize) {
+            let output = document.getElementById('output')
+            output.innerHTML = 'Нажата кнопка 1' + buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.border = bordersize;
+        }
     </script>
    
    <style>
@@ -64,6 +71,11 @@
             line-height: 20px;
             
         }
+        #output {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+        }
     </style>
 </head>
 <body>
@@ -79,6 +91,15 @@
         <div class="message" onclick="showDifference()">Найти разность чисел</div>
         <div class="message" onclick="showProduct()">Найти произведение</div>
         <div class="message" onclick="showDividing()">Найти деление</div>
+        
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1,'red','yellow','3px solid')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'black', 'lime','5px solid')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'blue', 'green','7px solid')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'orange', 'green','9px solid')">
+        </div>
+
+        <div id="output"></div>
     </main>
     
     <footer onclick="showAuthor()">
