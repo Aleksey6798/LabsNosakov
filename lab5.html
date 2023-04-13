@@ -49,13 +49,28 @@
         }
         function changeOutput(buttonNum, backColor,textColor,bordersize) {
             let output = document.getElementById('output')
-            output.innerHTML = 'Нажата кнопка 1' + buttonNum;
+            output.innerHTML = 'Нажата кнопка' + buttonNum;
             output.style.backgroundColor = backColor;
             output.style.color = textColor;
             output.style.border = bordersize;
         }
+        function showPrice() {
+            let inputApples = document.getElementById("numberApples");
+            let inputPears = document.getElementById("numberPears");
+            let inputОranges = document.getElementById("numberОranges");
+            let inputMelons = document.getElementById("numberMelons");
+        
+            let a = parseInt(inputApples.value);
+            let b = parseInt(inputPears.value);
+            let c = parseInt(inputОranges.value);
+            let d = parseInt(inputMelons.value);
+        
+            let price = 100 * a + 80 * b + 150 * c + 300 * d;
+            let output = document.getElementById('price');
+            output.innerHTML = "Общая цена:" + price + "р"
+        }
     </script>
-   
+
    <style>
         .message { 
             width:  180px; 
@@ -76,6 +91,12 @@
             width: 300px;
             height: 40px;
         }
+       .korzinatovarov {
+            border: 3px solid;
+            width: 300px;
+            height: 300px;
+            
+       }
     </style>
 </head>
 <body>
@@ -100,11 +121,31 @@
         </div>
 
         <div id="output"></div>
+        
+        <div class="korzinatovarov">
+            <h1>Корзина товаров</h1><br>
+            <label>Яблоки (100р/шт):</label><br>
+            <input type="number" id="numberApples"><br>
+            
+            <label>Груши (80р/шт):</label><br>
+            <input type="number" id="numberPears"><br>
+
+            <label>Апельсины (150р/шт):</label><br>
+            <input type="number" id="numberОranges"><br>
+        
+            <label>Апельсины (300р/шт):</label><br>
+            <input type="number" id="numberMelons"><br>
+
+            <input type="button" value="Рассчитать" onclick="showPrice()">
+            
+            <div id="price"></div>
+        </div>
+    
     </main>
     
     <footer onclick="showAuthor()">
         &copy; Алексей Носаков, ФБИ-13, 2 курс, 2023
     </footer>
-
+    
 </body>
 </html>
