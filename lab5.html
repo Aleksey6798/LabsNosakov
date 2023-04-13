@@ -20,6 +20,33 @@
             let author = 'Автор страницы: \nНосаков Алексей Иванович \nДа прибудет с вами сила!';
             alert(author);
         }
+        function showDifference() {
+            let inputA = document.getElementById('numberA')
+            let inputB = document.getElementById('numberB')
+            
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a - b;
+            alert(' Разность ' + a + ' и ' + b + ' равна ' + result);
+        }
+        function showProduct() {
+            let inputA = document.getElementById('numberA')
+            let inputB = document.getElementById('numberB')
+            
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a * b;
+            alert(' Произведение ' + a + ' и ' + b + ' равна ' + result);
+        }
+        function showDividing() {
+            let inputA = document.getElementById('numberA')
+            let inputB = document.getElementById('numberB')
+            
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a / b;
+            alert(' Деление ' + a + ' и ' + b + ' равна ' + result);
+        }
     </script>
    
    <style>
@@ -28,13 +55,14 @@
             background-color: lightcoral; 
             border: 1px solid; 
             display: inline-block;
-            height: 50px;
+            height: 45px;
             cursor: pointer;
             color: lightgreen;
             border-radius: 300px;
             text-align: center;
             border-color: blueviolet;
             line-height: 20px;
+            
         }
     </style>
 </head>
@@ -48,6 +76,9 @@
         <label>Второе число <input type="number" value="7891" id="numberB"><br></label>
         <div class="message" onclick="showSum()">Найти сумму числе</div>
         <div class="message" onclick="showAuthor()">Узнать,кто автор страницы</div>
+        <div class="message" onclick="showDifference()">Найти разность чисел</div>
+        <div class="message" onclick="showProduct()">Найти произведение</div>
+        <div class="message" onclick="showDividing()">Найти деление</div>
     </main>
     
     <footer onclick="showAuthor()">
