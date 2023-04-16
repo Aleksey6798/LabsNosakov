@@ -69,6 +69,11 @@
             let output = document.getElementById('price');
             output.innerHTML = "Общая цена:" + price + "р"
         }
+        function showKrug(id) {
+            let f = document.getElementById(id);
+            f.style.display = 'none';
+            
+        }
     </script>
 
    <style>
@@ -95,8 +100,19 @@
             border: 3px solid;
             width: 300px;
             height: 300px;
+        
+        }
+        
+        .Krug {
+            height: 50px; 
+            width: 50px; 
+            border: 1px solid; 
+            border-radius: 100px; 
+            display: inline-block;
+            text-align: center;
+            line-height: 50px;
             
-       }
+        }
     </style>
 </head>
 <body>
@@ -141,6 +157,16 @@
             <div id="price"></div>
         </div>
     
+        <div class="Krug" style="background-color: blue;"  id="a1" onclick="showKrug('a1')"><b>1</b></div>
+        <div class="Krug" style="background-color: aqua;"  id="a2" onclick="showKrug('a2')"><b>2</b></div>
+        <div class="Krug" style="background-color: blueviolet;" id="a3" onclick="showKrug('a3')" ><b>3</b></div>
+        <div class="Krug" style="background-color: chartreuse;" id="a4" onclick="showKrug('a4')" ><b>4</b></div>
+        <div class="Krug" id="a5" onclick="showKrug('a5')"><b>5</b></div>
+        <div class="Krug" style="background-color: burlywood;" id="a6" onclick="showKrug('a6')"><b>6</b></div>
+        <div class="Krug" style="background-color: chocolate;" id="a7" onclick="showKrug('a7')"><b>7</b></div>
+        <div class="Krug" style="background-color: darkgreen;" id="a8" onclick="showKrug('a8')"><b>8</b></div>
+        <div class="Krug" style="background-color: cornflowerblue;" id="a9" onclick="showKrug('a9')"><b>9</b></div>
+        <div class="Krug" style="background-color: gold;" id="a10" onclick="showKrug('a10')"><b>10</b></div>
     </main>
     
     <footer onclick="showAuthor()">

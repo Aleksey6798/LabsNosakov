@@ -22,7 +22,11 @@ footer {
     color: lightgreen;
     padding: 10px;
     font-size: 16pt;
-    text-align: right;
+    text-align: right; 
+    position: fixed;
+    bottom: 0;
+    right: 0;  
+    left: 0;
 }
 
 a {
