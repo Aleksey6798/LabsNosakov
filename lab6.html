@@ -16,6 +16,15 @@
            
             
         }
+        .Rule{
+            border: 1px solid;
+            border-radius: 20px;
+            width: 500px;
+            margin:  50px auto;
+            background-color: antiquewhite;
+            
+            
+        }
     </style>
     <script>
         let number
@@ -31,7 +40,7 @@
             let input = document.getElementById('user-number')
             let userNumber = parseInt(input.value);
             let message = document.getElementById('result');
-            if ((userNumber < 100) || (userNumber > 1)) {
+            if ((userNumber > 100) || (userNumber < 1)) {
                 message.innerHTML = 'число должно быть в диапазоне от 1 до 100';
             }
             else if(userNumber > number) {
@@ -52,16 +61,26 @@
             
                 
         }
-            function again(params) {
-                let screens = document.getElementsByClassName('game')
-                screens[2].style.display = 'none';
-                screens[1].style.display = 'block';
-                count = 0
-                startGame();
-                let message = document.getElementById('result');
-                message.innerHTL = ""
+        function again(params) {
+            let screens = document.getElementsByClassName('game')
+            screens[2].style.display = 'none';
+            screens[1].style.display = 'block';
+            count = 0
+            startGame();
+            let message = document.getElementById('result');
+            message.innerHTL = ""
                 
-            }
+        }
+        function Pravila() {
+            let screens = document.getElementsByClassName('Rule')
+            screens[0].style.display = 'none';
+            screens[1].style.display = 'block';
+        }  
+        function closerules() {
+            let screens = document.getElementsByClassName('Rule')
+            screens[1].style.display = 'none';
+            screens[0].style.display = 'block';
+        }
     </script>
 </head>
 <body>
@@ -99,7 +118,26 @@
                 <button onclick="again()"> Сыграть ещё раз</button>
             </div>
         </div>
-    
+        
+        <div class="Rule">
+            <div>
+                <button onclick="Pravila()">Показать правила игры</button>
+            </div>
+        </div>
+        
+        <div class="Rule" style="display: none;">
+            <button onclick="closerules()">Скрыть правила игры</button>
+            <ol type="A">
+                <li>Нажмите на кнопку "сыграть в игру"</li>
+                <li>Введите число от 1 до 100</li>
+                <li>Нажмите на кнопку "Угадать"</li>
+                <li>Если появилось сообщение "Вы ввели слишком маленькое число", то введите число больше</li>
+                <li>Если появилось сообщение "Вы ввели слишком большое число", то введите число меньше</li>
+                <li>Если число угадано, то поятвится сообщение "Поздравляем, вы выиграли"</li>
+                <li>Чтобы сыграть ещё раз, то нажмите кнопку "Сыграть ещё раз"</li>
+            </ol>
+        
+        </div>
     </main>
     
     <footer>
