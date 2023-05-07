@@ -25,6 +25,14 @@
             
             
         }
+        .Color{
+            border: 1px solid;
+            width: 300px;
+            height: 100px;
+            background-color: yellow;
+            text-align: center;
+            
+        }
     </style>
     <script>
         let number
@@ -81,6 +89,34 @@
             screens[1].style.display = 'none';
             screens[0].style.display = 'block';
         }
+        function changeColor(div) {
+            if ((div.style.backgroundColor == 'yellow')||(div.style.fontFamily =='Courier New')) {
+                div.style.backgroundColor = 'red';
+                div.style.fontFamily = 'bold';
+                document.getElementById('color-name').innerHTML = 'красный';
+            }
+            
+            else if (div.style.backgroundColor == 'red') {
+                div.style.backgroundColor = 'black';    
+                div.style.fontFamily = 'white';
+                document.getElementById('color-name').innerHTML = 'чёрный';
+            }
+            else if (div.style.backgroundColor == 'black') {
+                div.style.backgroundColor = 'orange';               
+                div.style.fontFamily = 'pink';
+                document.getElementById('color-name').innerHTML = 'оранжевый';
+            }
+            else if (div.style.backgroundColor == 'orange') {
+                div.style.backgroundColor = 'purple';               
+                div.style.fontFamily = 'Courier New';
+                document.getElementById('color-name').innerHTML = 'фиолетовый';
+            }
+                else  {
+                div.style.backgroundColor = 'yellow';
+                document.getElementById('color-name').innerHTML = 'жёлтый';
+                
+            }
+        }   
     </script>
 </head>
 <body>
@@ -136,6 +172,10 @@
                 <li>Если число угадано, то поятвится сообщение "Поздравляем, вы выиграли"</li>
                 <li>Чтобы сыграть ещё раз, то нажмите кнопку "Сыграть ещё раз"</li>
             </ol>
+        
+        </div>
+        
+        <div class="Color" ondblclick="changeColor(this)"> Цвет:<span id = color-name> жёлтый </span><br> сделайте двойной щелчок чтобы сменить.
         
         </div>
     </main>
