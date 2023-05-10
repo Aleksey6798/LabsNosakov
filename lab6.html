@@ -30,8 +30,21 @@
             width: 300px;
             height: 100px;
             background-color: yellow;
+            text-align: center; 
+        }
+        .bloc{
+            width: 150px;
+            height: 100px;
+            border: 1px solid;
+            cursor: pointer;
+            position: absolute;
+            left: 0px;
+            transition: 1ms;
+            margin: 50px auto;
+            background-color: green;
+            color: yellow;
             text-align: center;
-            
+            line-height: 90px;
         }
     </style>
     <script>
@@ -107,9 +120,9 @@
                 document.getElementById('color-name').innerHTML = 'оранжевый';
             }
             else if (div.style.backgroundColor == 'orange') {
-                div.style.backgroundColor = 'purple';               
+                div.style.backgroundColor = 'green';               
                 div.style.fontFamily = 'Courier New';
-                document.getElementById('color-name').innerHTML = 'фиолетовый';
+                document.getElementById('color-name').innerHTML = 'зелёный';
             }
                 else  {
                 div.style.backgroundColor = 'yellow';
@@ -117,6 +130,19 @@
                 
             }
         }   
+        function moveBlock() {
+           let move = document.getElementById("moving-block");
+           if (move.style.left =="0px") {
+            move.style.transform = "rotate(4turn)";
+            move.style.left = "calc(100% - 153px)";
+           
+           }
+            else {
+            move.style.left = "0";
+            move.style.transform = "rotate(0)";
+           }
+            
+        }
     </script>
 </head>
 <body>
@@ -178,6 +204,8 @@
         <div class="Color" ondblclick="changeColor(this)"> Цвет:<span id = color-name> жёлтый </span><br> сделайте двойной щелчок чтобы сменить.
         
         </div>
+        
+        <div class="bloc" id="moving-block" onclick="moveBlock()"> Щёлкни меня</div>
     </main>
     
     <footer>
