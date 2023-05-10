@@ -165,7 +165,44 @@
             blocc.style.width = "100px";
             }
         }
-
+        function filter() {
+            let color = document.getElementById('wear-color').value;
+            let type = document.getElementById('wear-type').value;
+            let wear = document.getElementById('wear');
+            
+            if (color == 'Красный' && type =='Футболка') {
+                wear.src = 'red-f.jpg'
+            }
+            else if (color == 'Красный' && type =='Поло') {
+                wear.src = 'red-p.jpg'
+            }     
+            else if (color == 'Красный' && type =='Майка') {
+                wear.src = 'red-m.jpg'
+            }     
+            else if (color == 'Белая' && type =='Футболка') {
+                wear.src = 'white-f.jpg'
+            }   
+            else if (color == 'Белая' && type =='Поло') {
+                wear.src = 'white-p.jpg'
+            }   
+            else if (color == 'Белая' && type =='Майка') {
+                wear.src = 'white-m.jpg'
+            }   
+            else if (color == 'Чёрная' && type =='Футболка') {
+                wear.src = 'black-f.jpg'
+            } 
+            else if (color == 'Чёрная' && type =='Поло') {
+                wear.src = 'black-p.jpg'
+            } 
+            else if (color == 'Чёрная' && type =='Майка') {
+                wear.src = 'black-m.jpg'
+            } 
+            else {
+                alert('Одежда не выбрана')
+            }
+        }   
+            
+          
     </script>
 </head>
 <body>
@@ -231,6 +268,26 @@
         <div class="block1" id="moving-block" onclick="moveBlock()"> Щёлкни меня</div>
 
         <div class="block2" id="blockk" onclick="blockextension()">Расширение</div>
+        
+        <div>
+            Цвет одежды:
+            <select id ='wear-color'>
+                <option>Красный</option>
+                <option>Белый</option>
+                <option>Чёрный</option>
+            </select><br>
+        
+            Тип одежды:
+            <select id ='wear-type'>
+                <option>Футболка</option>
+                <option>Поло</option>
+                <option>Майка</option>
+            </select><br>
+            
+            <button onclick=" filter()">ОК</button><br>
+            <img id="wear" style="background-color: black;">
+        </div>
+
     </main>
     
     <footer>
