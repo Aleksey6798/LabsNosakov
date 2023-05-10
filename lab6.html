@@ -32,7 +32,7 @@
             background-color: yellow;
             text-align: center; 
         }
-        .bloc{
+        .block1{
             width: 150px;
             height: 100px;
             border: 1px solid;
@@ -40,11 +40,22 @@
             position: absolute;
             left: 0px;
             transition: 1ms;
-            margin: 50px auto;
+            margin: 20px auto;
             background-color: green;
             color: yellow;
             text-align: center;
             line-height: 90px;
+        }
+        .block2{
+            width: 100px;
+            height: 100px;
+            border: 1px solid;
+            margin: 20px;
+            background-color: goldenrod;
+            color: blue;
+            text-align: center;
+            line-height: 90px;
+            margin-top: 150px;
         }
     </style>
     <script>
@@ -143,6 +154,18 @@
            }
             
         }
+        function blockextension() {
+            const blocc = document.getElementById("blockk");
+            const currentWidth = parseInt(blocc.style.width);
+            const newWidth = currentWidth + 50;
+            if (newWidth <= 1000) {
+            blocc.style.width = newWidth + "px";
+            }
+            else {
+            blocc.style.width = "100px";
+            }
+        }
+
     </script>
 </head>
 <body>
@@ -205,7 +228,9 @@
         
         </div>
         
-        <div class="bloc" id="moving-block" onclick="moveBlock()"> Щёлкни меня</div>
+        <div class="block1" id="moving-block" onclick="moveBlock()"> Щёлкни меня</div>
+
+        <div class="block2" id="blockk" onclick="blockextension()">Расширение</div>
     </main>
     
     <footer>
