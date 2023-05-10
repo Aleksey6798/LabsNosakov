@@ -6,12 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Носаков Алексей Иванович. Лабораторная 7</title>
     <link rel="stylesheet" href="main.css">
+    <style>
+     
+    </style>
+    <script>
+        function addBlocks() {
+            let blocks = document.getElementById('blocks');
+            for (let i =0; i < 10; i++) {
+                let block = document.createElement('div');
+                block.innerHTML = 'Блок №' + (i+1) + ':' + (2 * i**2);
+
+                blocks.appendChild(block);
+            }
+        }
+    </script>
 </head>
 <body>
-   
+   <header>
+    НГТУ,ФБ, Лабораторная работа 7
+   </header>
     <main>
-
-   </main> 
+        <button onclick="addBlocks()">Создать блоки</button>
+        <div id="blocks"></div>
+    </main> 
    
    
    <footer>
