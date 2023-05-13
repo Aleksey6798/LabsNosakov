@@ -86,6 +86,20 @@
                 polee.appendChild(circle2);
             }
         }
+        function Calculate () {
+            let number = 28;
+            let table = document.getElementById('numbers')
+        
+            for (let i = 18; i<=28; i++) {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.innerHTML = number + '*' + i + '=' + (number * i)
+                tr.appendChild(td);
+                table.appendChild(tr);
+            }
+        }
+        
+        
     
     </script>
 </head>
@@ -109,7 +123,8 @@
         <button onclick=" Circles()">Красное/Зелёное</button>
         <div id="pole"></div>
         
-        
+        <button onclick="Calculate()">Таблица умножения на 28</button>
+        <table border="1" id=numbers></table>
     </main> 
    
    
