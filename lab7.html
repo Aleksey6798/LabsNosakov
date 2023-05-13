@@ -7,7 +7,23 @@
     <title>Носаков Алексей Иванович. Лабораторная 7</title>
     <link rel="stylesheet" href="main.css">
     <style>
-     
+        .Opacity {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            margin: 10px;
+            float: left;
+            transition: opacity 0.5s;
+        }
+        .krug {
+            height: 50px; 
+            width: 50px; 
+            border: 1px solid; 
+            border-radius: 50%; 
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
     <script>
         function addBlocks() {
@@ -38,7 +54,39 @@
             document.getElementById('detail').innerHTML = 'Среднее значение:' + average;
         }
 
-
+        function addTransparentBlocks() {
+            let Blocks = document.getElementById('transparent-blocks');
+            for (let i =0; i < 10; i++) {
+                const A = document.createElement('div');
+                A.style.opacity = i / 10;
+                A.classList.add('Opacity')
+                Blocks.appendChild(A);
+            }
+               
+            
+        }
+        function Circles () {
+            let polee = document.getElementById('pole');
+            let circle = document.getElementById('number-input');
+            let numbercircles = parseInt(circle.value);
+            
+            for (let i = numbercircles; i > 0; i--) {
+                let circle2 = document.createElement('div');
+                circle2.innerHTML = (i);
+                
+                
+                if ( i % 2 == 0) {
+                    circle2.style.backgroundColor = 'green'; 
+                }
+                else {
+                    circle2.style.backgroundColor = 'red';
+                }
+                
+                circle2.classList.add('krug');
+                polee.appendChild(circle2);
+            }
+        }
+    
     </script>
 </head>
 <body>
@@ -52,6 +100,16 @@
         <button onclick="showExchange()">Курс доллара</button>
         <table border="1" id="dollar-exchange"></table>
         <div id="detail"></div>
+    
+        <button onclick="addTransparentBlocks()">Создать полупрозрачные блоки</button>
+        <div  id="transparent-blocks"></div>
+        
+        
+        <label>Введите число <input placeholder="введите число кругов" type="number" value="5" id="number-input"><br></label>
+        <button onclick=" Circles()">Красное/Зелёное</button>
+        <div id="pole"></div>
+        
+        
     </main> 
    
    
