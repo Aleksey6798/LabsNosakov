@@ -173,28 +173,28 @@
             if (color == 'Красный' && type =='Футболка') {
                 wear.src = 'red-f.jpg'
             }
+            else if (color == 'Белый' && type =='Футболка') {
+                wear.src = 'white-f.jpg'
+            }     
+            else if (color == 'Чёрный' && type =='Футболка') {
+                wear.src = 'black-f.jpg'
+            }     
             else if (color == 'Красный' && type =='Поло') {
                 wear.src = 'red-p.jpg'
-            }     
-            else if (color == 'Красный' && type =='Майка') {
-                wear.src = 'red-m.jpg'
-            }     
-            else if (color == 'Белая' && type =='Футболка') {
-                wear.src = 'white-f.jpg'
             }   
-            else if (color == 'Белая' && type =='Поло') {
+            else if (color == 'Белый' && type =='Поло') {
                 wear.src = 'white-p.jpg'
             }   
-            else if (color == 'Белая' && type =='Майка') {
-                wear.src = 'white-m.jpg'
-            }   
-            else if (color == 'Чёрная' && type =='Футболка') {
-                wear.src = 'black-f.jpg'
-            } 
-            else if (color == 'Чёрная' && type =='Поло') {
+            else if (color == 'Чёрный' && type =='Поло') {
                 wear.src = 'black-p.jpg'
+            }   
+            else if (color == 'Красный' && type =='Майка') {
+                wear.src = 'red-m.jpg'
             } 
-            else if (color == 'Чёрная' && type =='Майка') {
+            else if (color == 'Белый' && type =='Майка') {
+                wear.src = 'white-m.jpg'
+            } 
+            else if (color == 'Чёрный' && type =='Майка') {
                 wear.src = 'black-m.jpg'
             } 
             else {
@@ -284,10 +284,10 @@
                 <option>Майка</option>
             </select><br>
             
-            <button onclick=" filter()">ОК</button><br>
-            <img id="wear" style="background-color: black;">
         </div>
-
+        <div><button onclick=" filter()">ОК</button><br></div>
+        <div><img id="wear" style="background-color: black;"></div>
+        
     </main>
     
     <footer>

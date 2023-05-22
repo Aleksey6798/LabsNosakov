@@ -99,6 +99,51 @@
             }
         }
         
+        function Cursmoney() {
+            
+            let course = [615.9, 646.6, 658.3, 645.3, 654.8,
+                        653.7, 666.8, 663.2, 665.8, 674.8 ];
+            
+            let date = ['03-05-2023', '02-05-2023', '01-05-2023', '30-04-2023',
+                        '29-04-2023', '28-04-2023', '27-04-2023', '26-04-2023', 
+                        '25-04-2023', '24-04-2023'];
+
+            let courseTable = document.getElementById('curs');
+
+            for (let i = 0; i< course.length; i++) {
+                let tr = document.createElement('tr');
+                let datetd = document.createElement('td');
+                let coursetd = document.createElement('td');
+                let minustd = document.createElement('td');
+                datetd.innerHTML = date[i];
+                coursetd.innerHTML = course[i];
+                minustd.innerHTML = (course[i] - course[i-1]).toFixed(2); 
+                tr.appendChild(datetd);
+                tr.appendChild(coursetd);
+                if(minustd.innerHTML != 'NaN') {
+                    tr.appendChild(minustd);
+                }
+                else {
+                    tr.append('-');
+                }
+                courseTable.appendChild(tr);
+            }
+                
+            let sum = 0;
+            for (let i = 0; i<course.length; i++) {
+                sum = sum + course[i];
+            }
+
+            let average = sum / course.length;
+            document.getElementById('sredne').innerHTML = 'Среднее значение:' + average;
+
+            let maxCourse = Math.max(...course);
+            let minCourse = Math.min(...course);
+            document.getElementById('max').innerHTML = 'Максимальное значение:' + maxCourse;
+            document.getElementById('min').innerHTML = 'Минимальное значение:' + minCourse;
+        }
+                
+            
         
     
     </script>
@@ -125,6 +170,12 @@
         
         <button onclick="Calculate()">Таблица умножения на 28</button>
         <table border="1" id=numbers></table>
+    
+        <button onclick="Cursmoney()">Курс акций "Полиметалл"</button>
+        <table border="1" id=curs></table>
+        <div id="sredne"></div>
+        <div id="max"></div>
+        <div id="min"></div>
     </main> 
    
    
