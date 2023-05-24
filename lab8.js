@@ -7,3 +7,13 @@ function showDate() {
     out.innerHTML +="Дата и время для локали Франции:" + today.toDateString('fr') + "<br>";
     out.innerHTML +="Дата и время для локали Италии:" + today.toDateString('it') + "<br>";
 }
+
+function showDaysCount() {
+    let today = new Date();
+    let inputDate = document.querySelector('input[type=date]');
+    let birtday = new Date(inputDate.value);
+    let daysCount = (today - birtday)/1000/60/60/24;
+    let div = document.getElementById('div1')
+    daysCount = Math.floor(daysCount);
+    div.innerHTML = "Количество дней сдаты рождения:" + daysCount
+}
