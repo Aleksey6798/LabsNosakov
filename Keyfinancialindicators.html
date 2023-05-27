@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Основные финансовые показатели</title>
+    <style>
+        .header{
+            background:linear-gradient(blue,lightblue);
+            color: white;
+            padding-top: 10px;
+            font-size: 16pt;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000px;
+            width: 100%;
+        }
+        
+        .header.fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            transform: translate3d(0,0,0);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .intro {
+            width: 100%;
+            height: 100vh;
+            background: url(bg-8d504ecf5ed1becd56f9512c6a978e43.jpg) center no-repeat;
+            background-size: cover;
+            
+        }
+        .nav {
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+        
+        .nav__link {
+            color: white;
+            text-decoration: none;
+            transition: color 0.2s linear;
+            display: inline-block;
+            vertical-align: top;
+            margin: 10px;
+            position: relative;
+        }
+
+        .nav__link:visited {
+            color: blueviolet;
+        }
+        
+        .nav__link:hover {
+            color: blue ;
+            text-decoration: underline;
+        }
+
+        .h {
+            text-align: center; 
+            font-size: x-large; 
+            text-decoration: underline; 
+            font-style: italic;
+            font-family: "TT Norms", sans-serif;
+        }
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section__header {
+            width: 100%;
+            max-width: 950px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+        
+   </style>
+
+   <script>
+        function ShowCurce() {
+            let coursClose = [100.4, 99.97, 99.91, 100.04, 100.17, 99.9, 99.92, 99.76, 99.7, 
+                    99.37, 99.35, 98.79, 99.2, 99.05, 98.4, 99.29, 99.55, 99.16, 99.42, 99.4];
+            
+            let date = ['03.04.23', '04.04.23', '05.04.23', '06.04.23', 
+                        '07.04.23', '10.04.23', '11.04.23', '12.04.23', 
+                        '13.04.23', '14.04.23', '17.04.23', '18.04.23', 
+                        '19.04.23', '20.04.23', '21.04.23', '24.04.23', 
+                        '25.04.23', '26.04.23', '27.04.23', '28.04.23',]
+            
+            let courseTable = document.getElementById('curs');
+            
+            for (let i = 0; i< coursClose.length; i++) {
+                let tr = document.createElement('tr');
+                let datetd = document.createElement('td');
+                let coursetd = document.createElement('td');
+                let minustd = document.createElement('td');
+                datetd.innerHTML = date[i];
+                coursetd.innerHTML = coursClose[i];
+                minustd.innerHTML = (coursClose[i] - coursClose[i-1]).toFixed(2); 
+                tr.appendChild(datetd);
+                tr.appendChild(coursetd);
+                if(minustd.innerHTML == 'NaN') {
+                    minustd.innerHTML ='-';
+                    tr.appendChild(minustd);
+                }
+                else {
+                    tr.append(minustd);
+                }
+                courseTable.appendChild(tr);
+            }   
+                let sum = 0;
+                for (let i = 0; i<coursClose.length; i++) {
+                    sum = sum + coursClose[i];
+                }
+
+                let average = Math.floor(sum / coursClose.length);
+                document.getElementById('sredne').innerHTML = 'Среднеквадратическое отклонение цены:'+ " " + average;
+
+                let maxCourse = Math.max(...coursClose);
+                let minCourse = Math.min(...coursClose);
+                document.getElementById('max').innerHTML = 'Максимальное значение:' + " " + maxCourse;
+                document.getElementById('min').innerHTML = 'Минимальное значение:' + " " + minCourse;
+                
+        }
+
+    </script>
+   
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__ineer">
+                
+                <div class="logo">АФК «Система»
+                    <img src="">
+                <nav class="nav">
+                    <a class="nav__link" href="Company.html" target="_blank" >О компании</a>
+                    <a class="nav__link" href="Keyfinancialindicators.html">Основные финансовые показатели</a>
+                    <a class="nav__link" href="Contactdetails.html" target="_blank">Контактные данные</a>
+                    <a class="nav__link" href="Video.html" target="_blank">Видео</a>
+                </nav>
+
+                    </div>
+                </div>
+            </div>
+    </header>
+    
+    <main>
+        <div class="intro"></div>
+        <section class="section" id="Economy" style="background-color: rgb(60, 60, 218); color: white;">
+            <div class="container"></div>
+            
+            <h5 class="h"> Финансовые показатели компании АФК "Система"</h5>
+            <div style="font-size: x-large; margin: 5px;"><b>Количество акций в обращении: 9420.05 млн. шт.</b></div>
+            <button onclick="ShowCurce()">Капитализация компании АФК "Система"</button>
+            <table border="1" id="curs" style="height: 500px; width: 500px; font-size: x-large;"></table>
+            <div id="sredne" style="font-size: x-large; font-weight: bold;"></div>
+            <div id="max" style="font-size: x-large; font-weight: bold;"></div>
+            <div id="min" style="font-size: x-large; font-weight: bold;"></div>
+           
+        </section>
+    </main>
+</body>
+</html>

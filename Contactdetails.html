@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контактные данные</title>
+    <style>
+        .header{
+            background:linear-gradient(blue,lightblue);
+            color: white;
+            padding-top: 10px;
+            font-size: 16pt;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000px;
+            width: 100%;
+        }
+        
+        .header.fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            transform: translate3d(0,0,0);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .intro {
+            width: 100%;
+            height: 100vh;
+            background: url(bg-8d504ecf5ed1becd56f9512c6a978e43.jpg) center no-repeat;
+            background-size: cover;
+            
+        }
+        .nav {
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+        
+        .nav__link {
+            color: white;
+            text-decoration: none;
+            transition: color 0.2s linear;
+            display: inline-block;
+            vertical-align: top;
+            margin: 10px;
+            position: relative;
+        }
+
+        .nav__link:visited {
+            color: blueviolet;
+        }
+        
+        .nav__link:hover {
+            color: blue ;
+            text-decoration: underline;
+        }
+
+        .h {
+            text-align: center; 
+            font-size: x-large; 
+            text-decoration: underline; 
+            font-style: italic;
+            font-family: "TT Norms", sans-serif;
+        }
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section__header {
+            width: 100%;
+            max-width: 950px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+        .footer {
+            padding-top: 50px;
+            background: linear-gradient(blue,lightblue);
+            color: white;
+            display: block;
+        }
+   </style>
+</head>
+<body>
+    <div class="container"></div>
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__ineer">
+                <div class="logo">АФК «Система»
+                    <img src="">
+                <nav class="nav">
+                    <a class="nav__link" href="Company.html" target="_blank" >О компании</a>
+                    <a class="nav__link" href="Keyfinancialindicators.html" target="_blank">Основные финансовые показатели</a>
+                    <a class="nav__link" href="Contactdetails.html">Контактные данные</a>
+                    <a class="nav__link" href="Video.html" target="_blank">Видео</a>
+                </nav>
+
+                    </div>
+                </div>
+            </div>
+        
+    </header>
+    
+    <main>
+        <div class="intro"></div>
+        <section class="section" id="Contact">
+                <h6 class="h">Контактные данные</h6>
+                <div style="text-align: center;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2829.787001520827!2d37.610990777215754!3d55.75641299171273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a5006177283%3A0xf4135e44e9e9d4ac!2z0YPQuy4g0JzQvtGF0L7QstCw0Y8sIDEzLCDQnNC-0YHQutCy0LAsIDEyNTAwOQ!5e1!3m2!1sru!2sru!4v1684994152097!5m2!1sru!2sru" 
+                    width="1000" height="900" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" >
+                    </iframe>
+                </div>
+                
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="container"></div>
+        <div style="text-decoration: underline;font-size: larger; margin-bottom: 10px; width: 400px;"> Справочная служба: +7 (495) 737-01-01<br></div>
+        <div style="text-decoration: underline;font-size: larger; margin-bottom: 10px; width: 700px;  margin-left: 400px; margin-top: -50px;">  
+            Адрес:<br>
+            125009,  Москва, ул. Моховая, 13 (м. Охотный ряд, выход к ул. Моховая, 100 метров).<br>
+        </div>
+        <div style="text-decoration: underline; font-size: larger; width: 20%; margin-left: 1200px; margin-top: -30px;">Факс: +7 (495) 730-03-30</div>
+    </footer>
+</body>
+</html>
